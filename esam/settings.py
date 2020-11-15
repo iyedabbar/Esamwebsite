@@ -15,6 +15,9 @@ import os
 import django_heroku
 import dj_database_url
 from decouple import config
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -29,7 +32,7 @@ SECRET_KEY = '83iyu)!72#*cot2(3(r$b=u(5!k-0__p3dkv8kwfv#5f_4w@^8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['esamjunior.herokuapp.com']
+ALLOWED_HOSTS = ['esamjunior.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -134,6 +137,10 @@ STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
 
 
-
+cloudinary.config( 
+  cloud_name = "esam", 
+  api_key = "875466586318862", 
+  api_secret = "PT_xkTOkMA9xxVjJJjKN36p15wY" 
+)
 
 

@@ -1,6 +1,7 @@
 from django.db import models
 import datetime
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 
 class category(models.Model):
     title = models.CharField(max_length =20)
@@ -15,7 +16,7 @@ class post(models.Model):
     overview =  models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
     commentcount = models.IntegerField(default=0)
-    thumnail = models.ImageField()
+    thumnail = CloudinaryField('image')
     categories = models.ManyToManyField('Category',related_name="packages" , blank = True)
     featured = models.BooleanField()
     date_added = models.DateField('date published',auto_now_add=True)
@@ -35,7 +36,7 @@ class post(models.Model):
 
 class PostImage(models.Model):
     Post = models.ForeignKey(post, default=None, on_delete=models.CASCADE)
-    images = models.FileField(upload_to = 'posts/')
+    images = CloudinaryField('image')
 
 def __str__(self):
         return self.post.title

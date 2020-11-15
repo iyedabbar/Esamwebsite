@@ -1,0 +1,120 @@
+{% extends 'base.html' %} 
+
+{% block content %}   
+{% load static %}
+    
+    <main>
+        <!--? Hero Start -->
+        <div class="slider-area2">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 pt-70 text-center">
+                                <h2>ACTUALITÉS</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+        <!--? Blog Area Start-->
+         
+        <section class="blog_area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mb-5 mb-lg-0">
+                        <div class="blog_left_sidebar">
+                            {% for obj in object_list %}  
+                            <article class="blog_item">
+                                <div class="blog_item_img">
+                                    <img class="card-img rounded-0" src="{{obj.thumnail.url}}" alt="">
+                                    <a href="#" class="blog_item_date">
+                                        <h3>{{obj.date_added}}</h3>
+                                    </a>
+                                    
+                                </div>
+                                <div class="blog_details">
+                                    <div>    
+                                        <ul class="blog-info-link">
+                                            {% for cat in obj.categories.all %}  
+                                            <li><a href="#"></i> {{cat}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <a class="d-inline-block" href="{{obj.get_absolute_url}}">
+                                        <h2 class="blog-head" style="color: #2d2d2d;">{{ obj.title }}</h2>
+                                    </a>
+                                    <p>{{ obj.overview| linebreaks | truncatewords:"50" }}<a href="{{obj.get_absolute_url}}">Read more </a></p>
+                                    <a href="{{obj.get_absolute_url}}"></a>
+                                 </div> 
+                                 
+                            </article>
+                            {% endfor %}
+                           
+                            <nav class="blog-pagination justify-content-center d-flex">
+                                <ul class="pagination">
+                                {% if posts.has_previous %}
+                                    <li class="page-item">
+                                        <a href="?page={{ posts.previous_page_number }}" class="page-link" aria-label="Previous">
+                                            <i class="ti-angle-left"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% for p in posts.paginator.page_range %}
+                                    {% if posts.number == p %}
+                                    <li class="page-item active ">
+                                        <a href="?page={{ p }}" class="page-link">{{ p }}</a>
+                                    </li>
+                                    {% else %}
+                                    <li class="page-item">
+                                        <a href="?page={{ p }}" class="page-link">{{ p }}</a>
+                                    </li>
+                                    {% endif %}   
+                                {% endfor %}
+                                {% if posts.has_next %}
+                                    <li class="page-item">
+                                        <a href="?page={{ posts.next_page_number }}" class="page-link" aria-label="Next">
+                                            <i class="ti-angle-right"></i>
+                                        </a>
+                                    </li>
+                                 {% endif %}
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog_right_sidebar">
+                            <aside class="single_sidebar_widget popular_post_widget">
+                                <h3 class="widget_title" style="color: #2d2d2d;">Dernières Actualités</h3>
+                                {% for obj in latest%}
+                                <div class="media post_item" >
+                                     <div class="media-body">
+                                        <a href="{{obj.get_absolute_url}}">
+                                            <h3 style="color: #2d2d2d;">{{ obj.title }}</h3>
+                                        </a>
+                                        <p>{{obj.timestamp| timesince}} ago </p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </aside>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog Area End -->
+    </main>
+ 
+<style>
+#sako{
+width: 10px;
+height: 10px;
+}
+</style>
+     
+ {% endblock content %}

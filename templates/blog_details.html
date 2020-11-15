@@ -1,0 +1,65 @@
+{% extends 'base.html' %} 
+
+{% block content %}   
+   <main>
+      <!--? Hero Start -->
+      <!-- Hero End -->
+      <!--? Blog Area Start -->
+      <section class="blog_area single-post-area section-padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 posts-list">
+                  <div class="single-post ">
+                        <h2 style="color: #2d2d2d;">{{Event.title }}
+                        </h2>
+                        <ul class="blog-info-link mt-3 mb-4">
+                           <li><a href="#"><i class="fa fa-user"></i> {{Event.date_added}}</a></li>
+                        </ul>
+                        <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+                           <!--Indicators-->
+                           <ol class="carousel-indicators">
+                           {% for p in photos %}
+                             <li data-target="#carousel-example-1z" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.counter0 == 0 %} active {% endif %}"></li>
+                           {% endfor %}
+                           </ol>
+                           <!--/.Indicators-->
+                           <!--Slides-->
+                           <div class="carousel-inner" role="listbox">
+                             {% for p in photos %}
+                             <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                               <img class="d-block w-100" src="{{p.images.url}}"
+                                 alt="First slide">
+                             </div>
+                             {% endfor %}
+                             <!--/First slide-->
+                           <!--/.Slides-->
+                           <!--Controls-->
+                           <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                             <span class="sr-only">Previous</span>
+                           </a>
+                           <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                             <span class="sr-only">Next</span>
+                           </a>
+                           <!--/.Controls-->
+                         </div>
+                       <div class="blog_details">
+                        <p class="excert">
+                           {{Event.overview|linebreaks}}
+                        </p>
+                    </div>
+                  </div>
+                  <div class="fb-comments" data-href="http://127.0.0.1:8000/" data-numposts="5" data-width=""></div>
+                  
+              
+      
+           
+               </div>
+
+            </div>
+         </div>
+      </section>
+      <!-- Blog Area End -->
+   </main>
+   {% endblock content %}

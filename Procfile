@@ -1,0 +1,1 @@
+web: gunicorn esam.wsgi --log-file -

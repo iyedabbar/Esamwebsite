@@ -134,7 +134,6 @@ STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
 
 
-# locals
-django_heroku.settings(locals(())
+
 
 

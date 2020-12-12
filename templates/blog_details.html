@@ -24,11 +24,11 @@
                            </ol>
                            <!--/.Indicators-->
                            <!--Slides-->
-                           <div class="carousel-inner" role="listbox">
+                           <div class="carousel-inner" role="listbox" id = "hello">
                              {% for p in photos %}
                              <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-                               <img class="d-block w-100" src="{{p.images.url}}"
-                                 alt="First slide">
+                              <a href="{{p.images.url}}"></a><img class="d-block w-100" src="{{p.images.url}}"
+                                 alt="First slide"></a>
                              </div>
                              {% endfor %}
                              <!--/First slide-->

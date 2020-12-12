@@ -275,9 +275,10 @@ testimonial.slick({
 
 
 // 12 Pop Up Img
-    var popUp = $('.single_gallery_part, .img-pop-up');
+    var popUp = $('.carousel-item, .img-pop-up');
       if(popUp.length){
         popUp.magnificPopup({
+          
           type: 'image',
           gallery:{
             enabled:true

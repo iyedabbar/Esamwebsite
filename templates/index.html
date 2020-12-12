@@ -302,7 +302,42 @@
   
   </div>
 
-    
+  <section class="featured-job-area section-padding30 section-bg2" ></section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-9 col-md-10 col-sm-12">
+                <!-- Section Tittle -->
+                <div class="section-tittle text-center mb-80">
+        
+                    <h2>Nos prochains événements</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-md-12">
+                {% for obj in object_list_2 %}
+                <div class="single-job-items mb-30">
+                    <div class="job-items">
+                        <div class="company-img">
+                            <a href="#"><img src=" {{obj.thumnail.url}}" alt=""></a>
+                        </div>
+                        <div class="job-tittle">
+                            <a href="#"><h4>{{obj.eventname}}</h4></a>
+                            <ul>
+                                <li><i class="far fa-clock"></i>{{ obj.eventtime }}</li>
+                                <li><i class="fas fa-sort-amount-down"></i>{{ obj.eventdate }}</li>
+                                <li><i class="fas fa-map-marker-alt"></i>{{ obj.eventloction }} </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            
+        </div>
+    </div>
+</section>
     <!-- Testimonial End -->
     <!--? Blog Area Start -->
     <section class="home-blog-area section-padding30">

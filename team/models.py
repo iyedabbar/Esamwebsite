@@ -12,6 +12,8 @@ class member(models.Model):
     Position = models.CharField(max_length = 150)
     message_testimonial = models.TextField(blank = True) 
     testimonial = models.BooleanField()
+  
+  
 
 
 

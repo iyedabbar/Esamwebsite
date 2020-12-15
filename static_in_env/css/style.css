@@ -3779,6 +3779,7 @@ hr {
   /* line 50, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_about.scss */
   .about-low-area .about-img {
     padding-top: 50px;
+    
   }
 }
 
@@ -3795,6 +3796,7 @@ hr {
   z-index: 1;
   left: 80px;
   bottom: 0;
+  
 }
 
 @media (max-width: 575px) {
@@ -3810,6 +3812,7 @@ hr {
   top: 0;
   right: 0;
   z-index: 0;
+  
 }
 
 @media (max-width: 575px) {
@@ -4158,6 +4161,8 @@ hr {
   float: left;
   margin-right: 32px;
   z-index: 999;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {

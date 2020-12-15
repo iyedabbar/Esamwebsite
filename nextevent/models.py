@@ -11,13 +11,11 @@ class nextevent(models.Model):
     thumnail = CloudinaryField('image')
     
   
-  
-
-
-
 
     def __str__(self):
         return self.eventname
 
+
+# Create your models here.
 
 # Create your models here.

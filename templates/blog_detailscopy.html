@@ -27,7 +27,7 @@
                            <div class="carousel-inner" role="listbox">
                              {% for p in photos %}
                              <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-                              <a href="{{p.images.url}}"><img class="d-block w-100" src="{{p.images.url}}"
+                              <a href="{{p.images.url}}" data-lightbox = "mygallery"><img class="d-block w-100" src="{{p.images.url}}"
                                  alt="First slide"></a>
                              </div>
                              {% endfor %}

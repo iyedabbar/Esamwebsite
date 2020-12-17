@@ -32,7 +32,7 @@ SECRET_KEY = '83iyu)!72#*cot2(3(r$b=u(5!k-0__p3dkv8kwfv#5f_4w@^8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['esamjunior.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['esamjunior.herokuapp.com', '127.0.0.1' , 'www.esamjuniorentreprise.tn' , 'esamjuniorentreprise.tn']
 
 
 # Application definition
@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'contacts',
     'Events',
     'team',
-    'nextevent'
+    'nextevent',
+    'embed_video',
 ]
 
 MIDDLEWARE = [

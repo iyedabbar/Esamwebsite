@@ -2,6 +2,9 @@ from django.db import models
 import datetime
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
+from embed_video.fields import EmbedVideoField
+
+
 
 class category(models.Model):
     title = models.CharField(max_length =20)
@@ -20,6 +23,9 @@ class post(models.Model):
     categories = models.ManyToManyField('Category',related_name="packages" , blank = True)
     featured = models.BooleanField()
     date_added = models.DateField('date published',auto_now_add=True)
+    video_display = models.BooleanField()
+    video = EmbedVideoField(blank = True)
+      
     
     def __str__(self):
         return self.title

@@ -1,9 +1,15 @@
 # Register your models here.
 from django.contrib import admin
 from .models import category, post, PostImage
+
 # Register your models here.
 
+
+
 admin.site.register(category)
+
+
+
 admin.site.site_header = 'ESAM JUNIOR ENTREPRISE'
 
 class PostImageAdmin(admin.StackedInline):

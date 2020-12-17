@@ -1,5 +1,5 @@
 {% extends 'base.html' %} 
-
+{% load embed_video_tags %}
 {% block content %}   
    <main>
       <!--? Hero Start -->
@@ -45,6 +45,11 @@
                            <!--/.Controls-->
                          </div>
                        <div class="blog_details">
+                        {% if Event.video_display == True %}
+                        <div class="embed-responsive embed-responsive-16by9">
+                           {% video Event.video %}
+                         </div>
+                        {% endif %}
                         <p class="excert">
                            {{Event.overview|linebreaks}}
                         </p>

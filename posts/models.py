@@ -18,7 +18,6 @@ class post(models.Model):
     title = models.CharField(max_length = 150)
     overview =  models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
-    commentcount = models.IntegerField(default=0)
     thumnail = CloudinaryField('image')
     categories = models.ManyToManyField('Category',related_name="packages" , blank = True)
     featured = models.BooleanField()

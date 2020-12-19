@@ -6,6 +6,7 @@ from posts.views import  blog , post , blog_detail
 from Events.views import events, evento_detail
 from contacts.views import contact
 from team.views import index 
+from django.views.generic import TemplateView
  
 urlpatterns = [ path('admin/', admin.site.urls),
                 path( '', index),
@@ -14,8 +15,8 @@ urlpatterns = [ path('admin/', admin.site.urls),
                 path('blog_detail/<id>/', blog_detail , name ='blog-detail'),
                 path('contact/', contact),
                 path('events/', events , name ='event-list'),
-                path('evento_detail/<id>/', evento_detail , name ='event-detail')
-                
+                path('evento_detail/<id>/', evento_detail , name ='event-detail'),
+                path('zohoverify/verifyforzoho.html', TemplateView.as_view(template_name='verifyforzoho.html'))
                
                 ]
                 

@@ -3579,6 +3579,22 @@ hr {
   }
 }
 
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 39, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_h1-hero.scss */
+  .slider-area {
+    background: #f8fcff;
+    
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 39, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_h1-hero.scss */
+  .slider-area {
+    background: #f8fcff;
+    
+  }
+}
+
 /* line 64, C:/Users/HP/Desktop/jun-2020/277.Charity _Non-profit/assets/scss/_h1-hero.scss */
 .slider-area .hero__caption span {
   font-size: 18px;

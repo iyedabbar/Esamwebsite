@@ -31,7 +31,6 @@ pyOpenSSL==20.0.1
 pyRFC3339==1.1
 python-decouple==3.3
 pytz==2020.4
-pywin32==300
 requests==2.25.0
 requests-toolbelt==0.9.1
 six==1.15.0

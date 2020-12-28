@@ -15,6 +15,7 @@
                         <ul class="blog-info-link mt-3 mb-4">
                            <li><a href="#"></i> {{Post.date_added}}</a></li>
                         </ul>
+                        {% if Post.image_display == True %}
                         <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
                            <!--Indicators-->
                            <ol class="carousel-indicators">
@@ -44,7 +45,7 @@
                            </a>
                            <!--/.Controls-->
                          </div>
-                         
+                         {% endif %}
                       
                        
                        <div class="blog_details">
@@ -54,7 +55,7 @@
                          </div>
                         {% endif %}
                            <p class="excert">
-                           {{Post.overview|linebreaks}}
+                           {{ Post.overview|safe }}
                         </p>
                     </div>
                   </div>

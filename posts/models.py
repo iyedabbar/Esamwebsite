@@ -3,7 +3,7 @@ import datetime
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
 from embed_video.fields import EmbedVideoField
-
+from ckeditor.fields import RichTextField
 
 
 class category(models.Model):
@@ -16,13 +16,14 @@ class category(models.Model):
 
 class post(models.Model):
     title = models.CharField(max_length = 150)
-    overview =  models.TextField()
+    overview =  RichTextField()
     timestamp = models.DateTimeField(auto_now_add=True)
     thumnail = CloudinaryField('image')
     categories = models.ManyToManyField('Category',related_name="packages" , blank = True)
     featured = models.BooleanField()
     date_added = models.DateField('date published',auto_now_add=True)
     video_display = models.BooleanField()
+    image_display = models.BooleanField(default = False)
     video = EmbedVideoField(blank = True)
       
     

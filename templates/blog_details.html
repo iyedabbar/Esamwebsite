@@ -15,6 +15,7 @@
                         <ul class="blog-info-link mt-3 mb-4">
                            <li><a href="#"><i class="fa fa-user"></i> {{Event.date_added}}</a></li>
                         </ul>
+                        {% if Event.image_display == True %}
                         <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
                            <!--Indicators-->
                            <ol class="carousel-indicators">
@@ -31,6 +32,7 @@
                                  alt="First slide"></a>
                              </div>
                              {% endfor %}
+                             
                              <!--/First slide-->
                            <!--/.Slides-->
                            <!--Controls-->
@@ -44,6 +46,7 @@
                            </a>
                            <!--/.Controls-->
                          </div>
+                         {% endif %}
                        <div class="blog_details">
                         {% if Event.video_display == True %}
                         <div class="embed-responsive embed-responsive-16by9">
@@ -51,7 +54,7 @@
                          </div>
                         {% endif %}
                         <p class="excert">
-                           {{Event.overview|linebreaks}}
+                           {{Event.overview|linebreaks|safe}}
                         </p>
                     </div>
                   </div>

@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'team',
     'nextevent',
     'embed_video',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -148,4 +149,8 @@ cloudinary.config(
   api_secret = "PT_xkTOkMA9xxVjJJjKN36p15wY" 
 )
 
-
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}

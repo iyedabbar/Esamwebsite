@@ -38,6 +38,8 @@ ALLOWED_HOSTS = ['esamjunior.herokuapp.com', '127.0.0.1' , 'www.esamjuniorentrep
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_interface',
+    'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +53,8 @@ INSTALLED_APPS = [
     'nextevent',
     'embed_video',
     'ckeditor',
+    
+
 ]
 
 MIDDLEWARE = [

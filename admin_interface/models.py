@@ -110,7 +110,7 @@ class Theme(models.Model):
         default=True,
         verbose_name=_('visible'))
 
-    favicon = models.FileField(
+    favicon = CloudinaryField(
         upload_to='admin-interface/favicon/',
         blank=True,
         help_text=_('(.ico|.png|.gif - 16x16|32x32 px)'),

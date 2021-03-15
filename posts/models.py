@@ -8,7 +8,8 @@ from ckeditor.fields import RichTextField
 
 class category(models.Model):
     title = models.CharField(max_length =20)
-
+    class Meta:
+        verbose_name_plural= '5. CATÉGORIES'
     def __str__(self):
         return self.title
 
@@ -26,7 +27,7 @@ class post(models.Model):
     image_display = models.BooleanField(default = False)
     video = EmbedVideoField(blank = True)
       
-    
+       
     def __str__(self):
         return self.title
     
@@ -44,6 +45,7 @@ class PostImage(models.Model):
     Post = models.ForeignKey(post, default=None, on_delete=models.CASCADE)
     images = CloudinaryField('image')
 
-def __str__(self):
+ 
+    def __str__(self):
         return self.post.title
 

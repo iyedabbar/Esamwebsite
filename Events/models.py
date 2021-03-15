@@ -14,6 +14,9 @@ class event(models.Model):
     video_display = models.BooleanField()
     image_display = models.BooleanField(default = False)
     video = EmbedVideoField(blank = True)  
+   
+ 
+
 
     def __str__(self):
         return self.title
@@ -28,5 +31,7 @@ class PostImage(models.Model):
     Event = models.ForeignKey(event, default=None, on_delete=models.CASCADE)
     images = CloudinaryField('image')
 
-def __str__(self):
+    
+
+    def __str__(self):
         return self.post.title

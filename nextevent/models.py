@@ -10,8 +10,7 @@ class nextevent(models.Model):
     eventloction = models.CharField(max_length = 150)
     thumnail = CloudinaryField('image')
     
-  
-
+ 
     def __str__(self):
         return self.eventname
 

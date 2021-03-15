@@ -4,7 +4,6 @@ from django.core.paginator import Paginator , PageNotAnInteger , EmptyPage
 
 
 
-
 def blog(request):
     featured = post.objects.filter(featured=True).order_by('-id')
     latest = post.objects.order_by('-timestamp')[0:6]

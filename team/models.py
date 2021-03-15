@@ -13,10 +13,6 @@ class member(models.Model):
     message_testimonial = models.TextField(blank = True) 
     testimonial = models.BooleanField()
   
-  
-
-
-
 
     def __str__(self):
         return self.name
